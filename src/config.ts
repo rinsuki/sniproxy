@@ -1,12 +1,28 @@
-import { $, YAML, Transformer, ok } from "./thirdparty.ts";
+import {
+  $,
+  YAML,
+  Transformer,
+  ok,
+  error,
+  ValidationError,
+} from "./thirdparty.ts";
+import { ProxyInfo } from "./types.ts";
 
 function $url<Protocol extends string>(
   $schema: Transformer<string, Protocol>,
-): Transformer<string, URL & { protocol: Protocol }> {
+): Transformer<string, ProxyInfo & { protocol: Protocol }> {
   return Transformer.from((str) => {
-    const url = new URL(str);
-    const protocol = $schema.transformOrThrow(url.protocol);
-    return ok(Object.assign(url, { protocol }));
+    const r = /^([a-z]+):\/\/(.+):(\d{1,5})$/.exec(str);
+    if (r == null) {
+      return error(new ValidationError([], new Error("Invalid URL")));
+    }
+    return ok(
+      {
+        protocol: $schema.transformOrThrow(r[1]),
+        hostname: r[2],
+        port: parseInt(r[3]),
+      },
+    );
   });
 }
 
@@ -25,7 +41,7 @@ export const config = $.obj({
     from: $.array($.string),
     to: $.either(
       $.literal("direct", "disconnect"),
-      $url($.literal("http:", "redirect:")),
+      $url($.literal("http", "redirect")),
     ),
   })),
 }).transformOrThrow(

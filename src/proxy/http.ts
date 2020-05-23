@@ -1,15 +1,14 @@
 import { readHTTPSingleLine } from "../utils/read-http-single-line.ts";
+import { ProxyInfo } from "../types.ts";
 
 const encoder = new TextEncoder();
 
 export async function connectWithHTTPProxy(
-  proxy: URL,
+  proxy: ProxyInfo,
   dest: string,
   port = 443,
 ) {
-  const conn = await Deno.connect(
-    { hostname: proxy.hostname, port: parseInt(proxy.port) },
-  );
+  const conn = await Deno.connect(proxy);
   try {
     const host = [dest, port].join(":");
     const msg = [
