@@ -10,7 +10,9 @@ export async function processConnection(conn: Deno.Conn) {
   const host = await getSNIHost(tlsContent);
   if (host == null) return;
   const to = getToFromHost(host);
-  const toAsString = typeof to === "string" ? to : to.origin;
+  const toAsString = typeof to === "string"
+    ? to
+    : `${to.protocol}://${to.hostname}:${to.port}`;
   console.log(
     `${conn.remoteAddr.hostname}:${conn.remoteAddr.port} → ${host} (by ${toAsString})`,
   );
