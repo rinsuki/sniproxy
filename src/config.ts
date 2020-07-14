@@ -44,6 +44,7 @@ export const config = $.obj({
       $url($.literal("http", "redirect")),
     ),
   })),
+  port: $.withDefault($.number, 443),
 }).transformOrThrow(
   YAML.safeLoad(
     await Deno.readTextFile(
