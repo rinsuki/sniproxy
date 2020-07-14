@@ -1,12 +1,13 @@
 {
-  "https://deno.land/x/js_yaml_port@3.13.1-0/js-yaml.min.js": "af2ea794b435266465e5150f438792b9a4a9feb18d3ef975e385871ecec188d1",
-  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/util.ts": "a7ccb554c36e9895e351e4c8de9ab5230b308028263ca5daeafbe19a513897fa",
-  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/index.ts": "114aa54a3689be84e38866bf0118869e0c70d5cf2f53c9f7595c4c4312501ff9",
-  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/errors.ts": "e04eda22e253f1a6028fc97c5976f71faf7e79b2046a4cc278974e0296595660",
-  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/result.ts": "6d7b0a3be104a0e1bc4765bd1438ab6b48cc72902f0171819666201e73460bcd",
-  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/primitives.ts": "851a6ca95143ce78fb4b1d7a8397c9a353ce47632299f648e97c2c9b64043d72",
-  "https://deno.land/x/js_yaml_port@3.13.1-0/js-yaml.js": "3f222617f23e90c2d096e235cad954dc0825dee54f65652ee9dc8158ab086022",
   "https://cdn.jsdelivr.net/gh/rinsuki/binarin@0.1.2/src/sync-reader.ts": "c79d696f9e573e9980ee2f5bc023b30b6e09aeaff9bd8afa5ee10b4cca630f32",
+  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/combinators.ts": "f4013ba620818af96866a5fb5d14adf9dba03f356d61ce549123ff5534246130",
+  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/errors.ts": "e04eda22e253f1a6028fc97c5976f71faf7e79b2046a4cc278974e0296595660",
+  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/index.ts": "114aa54a3689be84e38866bf0118869e0c70d5cf2f53c9f7595c4c4312501ff9",
+  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/primitives.ts": "851a6ca95143ce78fb4b1d7a8397c9a353ce47632299f648e97c2c9b64043d72",
+  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/result.ts": "6d7b0a3be104a0e1bc4765bd1438ab6b48cc72902f0171819666201e73460bcd",
   "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/transformer.ts": "ee2f09e432198a7aee7393cb2469544689b6d89e919f272cb43506d94f5f1b60",
-  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/combinators.ts": "f4013ba620818af96866a5fb5d14adf9dba03f356d61ce549123ff5534246130"
+  "https://cdn.jsdelivr.net/gh/rinsuki/transform-ts@0cbb6c53edcdfec16724bcaba780f419014833bc/src/util.ts": "a7ccb554c36e9895e351e4c8de9ab5230b308028263ca5daeafbe19a513897fa",
+  "https://deno.land/x/js_yaml_port@3.13.1-0/js-yaml.d.ts": "35076b65eb3d849fba353635aeb0ae7f26c5a9c69503a9ed09228e92445c90cb",
+  "https://deno.land/x/js_yaml_port@3.13.1-0/js-yaml.js": "3f222617f23e90c2d096e235cad954dc0825dee54f65652ee9dc8158ab086022",
+  "https://deno.land/x/js_yaml_port@3.13.1-0/js-yaml.min.js": "af2ea794b435266465e5150f438792b9a4a9feb18d3ef975e385871ecec188d1"
 }
