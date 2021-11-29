@@ -1,6 +1,7 @@
 # sniproxy
 
 tcp/443 として listen し、接続されたクライアントの SNI のホスト名によって実際の接続先を振り分けます。
+config に http_port を指定すると HTTP の Host ヘッダーでも振り分けてくれるサーバーが追加で listen するようになります。
 
 ## Requirements
 
@@ -25,6 +26,7 @@ configファイルはyamlです。
 ### configファイルの文法
 
 ```yaml
+http_port: 80 # http_port を指定すると HTTP で待ち受けて SNI のホスト名の代わりに Host ヘッダーで割り振るサーバーが追加でlistenするようになります
 map:
   - to: http://proxy:8080 # 前述の接続先の文法
     from:
