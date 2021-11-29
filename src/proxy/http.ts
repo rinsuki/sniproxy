@@ -6,7 +6,7 @@ const encoder = new TextEncoder();
 export async function connectWithHTTPProxy(
   proxy: ProxyInfo,
   dest: string,
-  port = 443,
+  port: number,
 ) {
   const conn = await Deno.connect(proxy);
   try {
@@ -21,7 +21,8 @@ export async function connectWithHTTPProxy(
     await conn.write(encodedMsg);
     var receivedMsg = "", isFirst = false;
     do {
-      receivedMsg = await readHTTPSingleLine(conn);
+      const [rm, _] = await readHTTPSingleLine(conn);
+      receivedMsg = rm
       if (isFirst) {
         isFirst = false;
         if (!receivedMsg.startsWith("HTTP/1.1 200")) throw receivedMsg;

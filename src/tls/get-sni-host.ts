@@ -1,6 +1,6 @@
 import { SyncReader } from "../thirdparty.ts";
 
-export async function getSNIHost(tlsContent: Uint8Array) {
+export function getSNIHost(tlsContent: Uint8Array) {
   const tlsContentReader = new SyncReader(new DataView(tlsContent.buffer));
 
   const handshakeType = tlsContentReader.u8();

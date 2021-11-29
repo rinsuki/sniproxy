@@ -1,5 +1,6 @@
 import { readBytesExactly } from "../utils/read-bytes.ts";
 import { SyncReader } from "../thirdparty.ts";
+import { getSNIHost } from "./get-sni-host.ts";
 
 export async function readTLSHeader(conn: Deno.Conn) {
   const tlsHeader = await readBytesExactly(conn, 5);
@@ -15,5 +16,12 @@ export async function readTLSHeader(conn: Deno.Conn) {
   const tlsContentLength = tlsHeaderReader.u16(false);
 
   const tlsContent = await readBytesExactly(conn, tlsContentLength);
-  return [tlsContent, tlsHeader];
+
+  const host = getSNIHost(tlsContent)
+
+  const tlsHello = new Uint8Array(tlsContent.byteLength + tlsHeader.byteLength);
+  tlsHello.set(tlsHeader, 0);
+  tlsHello.set(tlsContent, tlsHeader.byteLength);
+
+  return [tlsHello, host] as const;
 }
