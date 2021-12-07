@@ -21,8 +21,16 @@ export async function processConnection(conn: Deno.Conn, isHTTP: boolean) {
   if (dest == null) throw `disconnect`;
 
   await dest.write(payload)
-  await Promise.all([
-    Deno.copy(dest, conn),
-    Deno.copy(conn, dest),
-  ]);
+  try {
+    await Promise.all([
+      Deno.copy(dest, conn),
+      Deno.copy(conn, dest),
+    ]);
+  } finally {
+    try {
+      dest.close()
+    } catch(e) {
+      // nothing
+    }
+  }
 }
