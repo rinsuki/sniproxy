@@ -24,5 +24,8 @@ export async function processConnection(conn: Deno.Conn, isHTTP: boolean) {
   await Promise.all([
     Deno.copy(dest, conn),
     Deno.copy(conn, dest),
-  ]);
+  ]).finally(() => {
+    dest.close()
+    conn.close()
+  });
 }
